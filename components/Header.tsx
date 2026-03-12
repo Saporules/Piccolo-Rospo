@@ -8,8 +8,8 @@ export default function Header() {
         <header className={styles.header}>
             <div className={`container ${styles.headerContent}`}>
                 <div className={styles.logo}>
-                    <span className="text-green">Piccolo </span>
-                    <span className="text-red">Rospo</span>
+                    <span className={`text-green plaster-regular ${styles.logoPiccolo}`}>Piccolo</span>
+                    <span className={`text-red birthstone-regular ${styles.logoRospo}`}>Rospo</span>
                 </div>
                 <nav className={styles.nav}>
                     <a href="#menu" className={styles.navLink}>Menú</a>

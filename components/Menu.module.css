@@ -16,13 +16,6 @@
     transform: translateX(-50%);
 }
 
-.menuTitle::after {
-    content: '🍕';
-    display: block;
-    font-size: 2rem;
-    margin-top: 10px;
-}
-
 .menuGrid {
     max-width: 800px;
     margin: 0 auto;
@@ -63,11 +56,49 @@
     opacity: 0.5;
 }
 
-.itemPrice {
+.menuSubtitle {
+    font-size: 2.5rem;
+    color: var(--color-green-dark);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-red-bright);
+    padding-bottom: 0.5rem;
+}
+
+.menuSubtitleExtras {
+    margin-top: var(--spacing-xl);
+}
+
+.itemPriceSingle {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--color-red-bright);
     white-space: nowrap;
+}
+
+.priceGrid {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.priceColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sizeLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-green-dark);
+    text-transform: uppercase;
+}
+
+.priceValue {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-red-bright);
+    line-height: 1;
 }
 
 .itemDescription {
@@ -96,9 +127,14 @@
         display: none;
     }
 
-    .itemPrice {
+    .itemPriceSingle, .priceGrid {
         width: 100%;
         margin-top: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .priceColumn {
+        align-items: flex-start;
     }
 
     .itemDescription {

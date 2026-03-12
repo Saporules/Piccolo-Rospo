@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './Hero.module.css';
+import logoPiccoloRospo from '../app/logo-piccolo-rospo.jpg';
 
 export default function Hero() {
     return (
@@ -8,8 +10,8 @@ export default function Hero() {
                 <div className={styles.textContent}>
                     <div className={styles.badge}>Pizza Artesanal</div>
                     <h1 className={styles.title}>
-                        PICCOLO<br />
-                        <span className={styles.titleRed}>Rospo</span>
+                        <span className="plaster-regular">Piccolo</span><br />
+                        <span className={`${styles.titleRed} birthstone-regular`}>Rospo</span>
                     </h1>
                     <p className={styles.subtitle}>
                         El auténtico sabor tradicional en cada rebanada. Horneadas a la perfección para los paladares más exigentes.
@@ -19,11 +21,13 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className={styles.imageContent}>
-                    {/* Placeholder for the frog logo/illustration from the user's images */}
+                    {/* Logo Piccolo Rospo */}
                     <div className={styles.illustrationWrapper}>
-                        <div className={styles.frogPlaceholder}>
-                            <span role="img" aria-label="Frog Chef">🐸🍕</span>
-                        </div>
+                        <Image
+                            src={logoPiccoloRospo}
+                            alt="Piccolo Rospo Logo"
+                            style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }}
+                        />
                         {/* Decorative stars */}
                         <div className={`${styles.star} ${styles.star1}`}>✦</div>
                         <div className={`${styles.star} ${styles.star2}`}>✦</div>

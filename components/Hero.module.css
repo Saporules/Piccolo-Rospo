@@ -5,6 +5,8 @@
     position: relative;
     overflow: hidden;
     padding: var(--spacing-xl) 0;
+    background-color: #f9e7c9;
+    /* Custom background color requested */
 }
 
 .hero::after {
@@ -50,8 +52,9 @@
 
 .titleRed {
     color: var(--color-red-bright);
-    font-style: italic;
-    font-size: 4rem;
+    font-size: 7.5rem;
+    display: block;
+    margin-top: -46px;
 }
 
 .subtitle {
@@ -77,11 +80,10 @@
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    border: 4px dashed var(--color-red-bright);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: transparent;
     animation: float 6s ease-in-out infinite;
 }
 
@@ -154,7 +156,8 @@
     }
 
     .titleRed {
-        font-size: 3rem;
+        font-size: 4.5rem;
+        margin-top: -20px;
     }
 
     .subtitle {

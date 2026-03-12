@@ -14,10 +14,16 @@
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 900;
-    letter-spacing: -1px;
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.logoRospo {
+    font-size: 3.5rem;
+    /* Birthstone needs to be larger */
 }
 
 .nav {

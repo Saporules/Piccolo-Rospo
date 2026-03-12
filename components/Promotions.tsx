@@ -1,40 +1,50 @@
 import React from 'react';
 import styles from './Promotions.module.css';
+import PromoSlider from './PromoSlider';
+import fs from 'fs';
+import path from 'path';
 
-export default function Promotions() {
+async function getPromotions() {
+    const promosDir = path.join(process.cwd(), 'app/content/promotions');
+    
+    if (!fs.existsSync(promosDir)) {
+        return [];
+    }
+
+    const folders = fs.readdirSync(promosDir);
+    const slides = [];
+
+    for (const folder of folders) {
+        const folderPath = path.join(promosDir, folder);
+        if (fs.statSync(folderPath).isDirectory()) {
+            const slideFilePath = path.join(folderPath, 'slide.ts');
+            if (fs.existsSync(slideFilePath)) {
+                try {
+                    // Import dynamically using Webpack contextual path
+                    const module = await import(`@/app/content/promotions/${folder}/slide`);
+                    if (module.slide) {
+                        slides.push(module.slide);
+                    }
+                } catch (error) {
+                    console.error(`Error loading slide from folder ${folder}:`, error);
+                }
+            }
+        }
+    }
+    
+    return slides;
+}
+
+export default async function Promotions() {
+    const slides = await getPromotions();
+
     return (
         <section id="promotions" className={`section ${styles.promotionsSection}`}>
             <div className="container text-center">
                 <h2 className={styles.sectionTitle}>Promociones Exclusivas</h2>
 
                 <div className={styles.promoGrid}>
-                    {/* Opciones de la promoción visual extraída del flyer (13" o 33cm) */}
-                    <div className={styles.blastWrapper}>
-                        <div className={`blast-shape ${styles.blastShape}`}>
-                            <div className={styles.blastContent}>
-                                <div className={styles.promoItem}>
-                                    <span className={styles.quantity}>1<span className={styles.x}>x</span></span>
-                                    <span className={styles.price}>$150</span>
-                                </div>
-                                <div className={styles.promoItem}>
-                                    <span className={styles.quantity}>2<span className={styles.x}>x</span></span>
-                                    <span className={styles.price}>$280</span>
-                                </div>
-                                <div className={styles.sizeNotice}>13" o 33cm</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={styles.promoInfoContent}>
-                        <h3>La Mejor Oferta en Tamaños Familiares</h3>
-                        <p className={styles.infoText}>
-                            Aplica en nuestras pizzas clásicas de 33 centímetros. Ideales para compartir y con opciones de envíos a domicilio desde $35 o recoge en sucursal.
-                        </p>
-                        <p className={styles.contactText}>
-                            Pedidos al: <br />
-                            <span className={styles.phone}>📞 444 234 7600</span>
-                        </p>
-                    </div>
+                    <PromoSlider slides={slides} />
                 </div>
             </div>
         </section>

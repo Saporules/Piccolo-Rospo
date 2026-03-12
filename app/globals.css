@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;600;700&display=swap');
 
 :root {
   /* Color Palette - Piccolo Rospo */
@@ -10,8 +10,9 @@
   --color-white: #ffffff;
   
   /* Typography */
-  --font-body: 'Poppins', sans-serif;
-  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Martel Sans', sans-serif;
+  --font-heading: 'Lexend', sans-serif;
+  --font-accent: 'Birthstone', cursive;
   
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -110,4 +111,20 @@ a {
 
 .section {
   padding: var(--spacing-lg) 0;
+}
+
+.birthstone-regular {
+  font-family: "Birthstone", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.plaster-regular {
+  font-family: "Plaster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lexend-heading {
+  font-family: "Lexend", sans-serif;
 }
