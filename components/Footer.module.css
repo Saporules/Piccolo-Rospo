@@ -1,0 +1,116 @@
+.footer {
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    padding-top: var(--spacing-xl);
+    border-top: 10px solid var(--color-red-bright);
+}
+
+.footerContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
+}
+
+.brandInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footerTitle {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-cream);
+    margin-bottom: 0.5rem;
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.instagramBlock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-speed);
+}
+
+.instagramBlock:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.igLink {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sectionTitle {
+    color: var(--color-cream);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.whatsappBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    /* WhatsApp official green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: var(--spacing-md);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    align-self: flex-start;
+}
+
+.whatsappBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.deliveryInfo {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.copyright {
+    text-align: center;
+    padding: var(--spacing-sm);
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footerContainer {
+        text-align: center;
+    }
+
+    .brandInfo,
+    .contactInfo {
+        align-items: center;
+    }
+
+    .whatsappBtn {
+        align-self: center;
+    }
+}

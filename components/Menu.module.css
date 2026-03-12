@@ -1,0 +1,107 @@
+.menuSection {
+    color: var(--color-text-dark);
+    padding: var(--spacing-xl) 0;
+    /* El background viene de pattern-checkers de globals.css pero sobreescribimos para no ser tan invasivo */
+    background: var(--color-cream);
+    position: relative;
+}
+
+.menuTitle {
+    font-size: 3rem;
+    color: var(--color-red-bright);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menuTitle::after {
+    content: '🍕';
+    display: block;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.menuGrid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--color-green-dark);
+}
+
+.menuItem {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.itemHeader {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.itemName {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-green-dark);
+    margin: 0;
+    white-space: nowrap;
+}
+
+.itemDots {
+    flex-grow: 1;
+    border-bottom: 2px dotted var(--color-red-bright);
+    margin: 0 var(--spacing-sm);
+    opacity: 0.5;
+}
+
+.itemPrice {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-red-bright);
+    white-space: nowrap;
+}
+
+.itemDescription {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-style: italic;
+    max-width: 90%;
+}
+
+@media (max-width: 768px) {
+    .menuGrid {
+        padding: var(--spacing-md);
+    }
+
+    .itemName {
+        font-size: 1.5rem;
+        white-space: normal;
+    }
+
+    .itemHeader {
+        flex-wrap: wrap;
+    }
+
+    .itemDots {
+        display: none;
+    }
+
+    .itemPrice {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .itemDescription {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,132 @@
+.promotionsSection {
+    background-color: var(--color-white);
+    position: relative;
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-green-dark);
+}
+
+.promoGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.blastWrapper {
+    position: relative;
+    max-width: 400px;
+    transition: transform var(--transition-speed);
+}
+
+.blastWrapper:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.blastShape {
+    background-color: var(--color-red-bright);
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    aspect-ratio: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.blastContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transform: rotate(-5deg);
+}
+
+.promoItem {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    line-height: 1;
+}
+
+.quantity {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.x {
+    font-size: 2rem;
+    margin-left: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+.price {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 2px 2px 0 var(--color-red-dark);
+}
+
+.sizeNotice {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    background-color: var(--color-cream);
+    color: var(--color-red-bright);
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+}
+
+.promoInfoContent {
+    text-align: left;
+    max-width: 400px;
+}
+
+.promoInfoContent h3 {
+    font-size: 2rem;
+    color: var(--color-green-dark);
+}
+
+.infoText {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    color: #555;
+}
+
+.contactText {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-green-dark);
+}
+
+.phone {
+    display: inline-block;
+    font-size: 2.5rem;
+    color: var(--color-red-bright);
+    font-weight: 900;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .promoGrid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .promoInfoContent {
+        text-align: center;
+    }
+
+    .blastShape {
+        padding: 3rem;
+    }
+
+    .price {
+        font-size: 3rem;
+    }
+}
